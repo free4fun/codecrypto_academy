@@ -1,0 +1,2 @@
+signerAddress=1764e5bbc71344779be6d41b5a8d4d3a54c50893
+sudo docker run --rm -v ${PWD}/pwd.txt:/pwd.txt -v ${PWD}/data:/data -p 5556:8545 ethereum/client-go:v1.13.15  --datadir /data --unlock ${signerAddress} --allow-insecure-unlock --mine --miner.etherbase ${signerAddress} --password /pwd.txt --nodiscover --http --http.addr "0.0.0.0" --http.api "admin,eth,debug,miner,net,txpool,personal,web3" --http.corsdomain "*"
